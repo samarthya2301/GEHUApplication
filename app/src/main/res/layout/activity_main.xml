@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/primary_container"
+	tools:context=".MainActivity">
+
+	<ImageView
+		android:id="@+id/ivImageGehuLogo"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/primary_container"
+		android:paddingTop="5dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@drawable/gehu_logo_image"
+		android:contentDescription="@string/graphic_era_hill_university_logo" />
+
+	<TextView
+		android:id="@+id/tvLogin"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dp"
+		android:fontFamily="@font/ubuntu_medium"
+		android:text="@string/login"
+		android:textColor="@color/on_primary_container"
+		android:textSize="25sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/ivImageGehuLogo" />
+
+	<View
+		android:id="@+id/dviderOne"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:background="?android:attr/listDivider"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+
+	<LinearLayout
+		android:id="@+id/containerLLStudentId"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginTop="30dp"
+		android:layout_marginStart="50dp"
+		android:layout_marginEnd="50dp"
+		android:padding="10dp"
+		android:background="@drawable/view_border"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/dviderOne">
+
+		<ImageView
+			android:id="@+id/ivStudetnIdVector"
+			android:layout_height="wrap_content"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:contentDescription="@string/student_id"
+			app:srcCompat="@drawable/vector_user_id" />
+
+		<View
+			android:id="@+id/dividerStudentId"
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_marginStart="10dp"
+			android:background="?android:attr/listDivider" />
+
+		<EditText
+			android:id="@+id/etStudentId"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="15dp"
+			android:layout_weight="4"
+			android:autofillHints="@string/student_id"
+			android:ems="10"
+			android:fontFamily="@font/ubuntu_medium"
+			android:hint="@string/student_id"
+			android:inputType="number"
+			android:minHeight="48dp"
+			android:textColor="@color/on_primary_container"
+			android:textColorHint="#795548"
+			tools:ignore="DuplicateSpeakableTextCheck" />
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/containerLLStudentPassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginStart="50dp"
+		android:layout_marginEnd="50dp"
+		android:background="@drawable/view_border"
+		android:padding="10dp"
+		android:layout_marginTop="10dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/containerLLStudentId">
+
+		<ImageView
+			android:id="@+id/ivStudentPasswordVector"
+			android:layout_height="wrap_content"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:contentDescription="@string/student_password"
+			app:srcCompat="@drawable/vector_user_password" />
+
+		<View
+			android:id="@+id/dividerStudentPassword"
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_marginStart="10dp"
+			android:background="?android:attr/listDivider" />
+
+		<EditText
+			android:id="@+id/etStudentPassword"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="15dp"
+			android:layout_weight="4"
+			android:autofillHints="@string/student_password"
+			android:ems="10"
+			android:fontFamily="@font/ubuntu_medium"
+			android:hint="@string/student_password"
+			android:inputType="textPassword"
+			android:minHeight="48dp"
+			android:textColor="@color/on_primary_container"
+			android:textColorHint="#795548"
+			tools:ignore="DuplicateSpeakableTextCheck" />
+
+
+	</LinearLayout>
+
+	<CheckBox
+		android:id="@+id/cbRememberStudentId"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="@font/ubuntu_medium"
+		android:textSize="15sp"
+		android:text="@string/remember_student_id"
+		android:textColor="@color/on_primary_container"
+		app:layout_constraintStart_toStartOf="@+id/containerLLStudentPassword"
+		app:layout_constraintTop_toBottomOf="@+id/containerLLStudentPassword" />
+
+	<Button
+		android:id="@+id/btnStudentLogin"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="50dp"
+		android:layout_marginEnd="50dp"
+		android:layout_marginTop="30dp"
+		android:fontFamily="@font/ubuntu_bold"
+		android:paddingTop="15dp"
+		android:paddingBottom="15dp"
+		android:text="@string/login"
+		android:textSize="20sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/cbRememberStudentId"
+		tools:ignore="DuplicateSpeakableTextCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

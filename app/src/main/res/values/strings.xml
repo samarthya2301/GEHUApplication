@@ -1,0 +1,9 @@
+<resources>
+	<string name="app_name">GEHUApplication</string>
+	<string name="graphic_era_hill_university_image">Graphic Era Hill University Image</string>
+	<string name="graphic_era_hill_university_logo">Graphic Era Hill University Logo</string>
+	<string name="login">LOGIN</string>
+	<string name="student_id">Student ID</string>
+	<string name="student_password">Student Password</string>
+	<string name="remember_student_id">Remember Student ID</string>
+</resources>
