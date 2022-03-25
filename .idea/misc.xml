@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/make_password_invisible.xml" value="0.2265" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/make_password_visible.xml" value="0.2265" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/vector_user_id.xml" value="0.2265" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/vector_user_password.xml" value="0.2265" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/view_border.xml" value="0.2265" />
-        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
       </map>
     </option>
   </component>

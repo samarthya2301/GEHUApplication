@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 	private EditText etStudentPassword;
 	private CheckBox cbRememberStudentId;
 	private Button btnStudentLogin;
+	private ImageView ivStudentPasswordSetVisible;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +36,37 @@ public class MainActivity extends AppCompatActivity {
 		etStudentPassword = findViewById(R.id.etStudentPassword);
 		cbRememberStudentId = findViewById(R.id.cbRememberStudentId);
 		btnStudentLogin = findViewById(R.id.btnStudentLogin);
+		ivStudentPasswordSetVisible = findViewById(R.id.ivStudentPasswordSetVisible);
 		
 		// the saved student id should appear at the start of the application
 		manageStudentIdPreference();
+
+		// click listener for the password hide and show button
+		AtomicBoolean isStudentPasswordVisible = new AtomicBoolean(false);
+		ivStudentPasswordSetVisible.setOnClickListener(view -> {
+
+			if (isStudentPasswordVisible.get()) {
+
+				ivStudentPasswordSetVisible.setImageResource(R.drawable.make_password_visible);
+				isStudentPasswordVisible.set(false);
+				etStudentPassword.setTransformationMethod
+						(PasswordTransformationMethod.getInstance());  // show password
+
+			} else {
+
+				ivStudentPasswordSetVisible.setImageResource(R.drawable.make_password_invisible);
+				isStudentPasswordVisible.set(true);
+				etStudentPassword.setTransformationMethod
+						(HideReturnsTransformationMethod.getInstance());  // hide password
+
+			}
+
+		});
+
+		// click listener for student login button
+		btnStudentLogin.setOnClickListener(view -> {
+
+		});
 
 	}
 	
