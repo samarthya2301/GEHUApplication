@@ -4,14 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 	private EditText etStudentId;
 	private EditText etStudentPassword;
 	private CheckBox cbRememberStudentId;
-	private Button btnStudentLogin;
 	private ImageView ivStudentPasswordSetVisible;
 
 	@Override
@@ -35,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 		etStudentId = findViewById(R.id.etStudentId);
 		etStudentPassword = findViewById(R.id.etStudentPassword);
 		cbRememberStudentId = findViewById(R.id.cbRememberStudentId);
-		btnStudentLogin = findViewById(R.id.btnStudentLogin);
+		Button btnStudentLogin = findViewById(R.id.btnStudentLogin);
 		ivStudentPasswordSetVisible = findViewById(R.id.ivStudentPasswordSetVisible);
 		
 		// the saved student id should appear at the start of the application
@@ -65,6 +74,26 @@ public class MainActivity extends AppCompatActivity {
 
 		// click listener for student login button
 		btnStudentLogin.setOnClickListener(view -> {
+
+			String studentId = etStudentId.getText().toString();
+			String studentPassword = etStudentPassword.getText().toString();
+
+			ExecutorService exec = Executors.newSingleThreadExecutor();
+			Handler handler = new Handler(Looper.getMainLooper());
+
+			exec.execute(() -> {
+				
+				try {
+					authenticateStudentLogin(studentId, studentPassword);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				handler.post(() -> {
+					Log.d("xxx", "Done");
+				});
+
+			});
 
 		});
 
@@ -124,6 +153,38 @@ public class MainActivity extends AppCompatActivity {
 
 		});
 		
+	}
+
+	public void authenticateStudentLogin(String studentId, String studentPassword) throws IOException {
+
+		URL backendLoginUrl = new URL("http://192.168.43.100:3000/login?" +
+										"studentId=" + studentId +
+										"&studentPassword=" + studentPassword);
+
+		HttpURLConnection httpURLConnection;
+		InputStream inputStream;
+		Scanner inputStreamReader;
+		StringBuilder loginJsonResponse = new StringBuilder();
+
+		httpURLConnection = (HttpURLConnection) backendLoginUrl.openConnection();
+		httpURLConnection.setRequestMethod("GET");
+		httpURLConnection.setConnectTimeout(10000);
+		httpURLConnection.setReadTimeout(10000);
+		httpURLConnection.connect();
+
+		inputStream = httpURLConnection.getInputStream();
+		inputStreamReader = new Scanner(inputStream);
+
+		while (inputStreamReader.hasNext()) {
+			loginJsonResponse.append(inputStreamReader.nextLine());
+		}
+
+		inputStreamReader.close();
+		inputStream.close();
+		httpURLConnection.disconnect();
+
+		Log.d("xxx", loginJsonResponse.toString());
+
 	}
 
 }
