@@ -90,8 +90,8 @@ function authenticateStudent(studentId, studentPassword, response, constants) {
 
 }
 
-const functions = {
+const loginFunctions = {
 	'checkStudentIdExistsOrNot': checkStudentIdExistsOrNot
 }
 
-module.exports = functions;
+module.exports = loginFunctions;

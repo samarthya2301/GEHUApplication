@@ -1,5 +1,6 @@
 const constants = require('./constants');
-const functions = require('./loginRoute');
+const loginFunctions = require('./loginRoute');
+const contactFunctions = require('./contactRoute');
 
 const app = constants.express();
 
@@ -8,7 +9,15 @@ app.get('/login', (request, response) => {
 	let studentId = request.query.studentId;
 	let studentPassword = request.query.studentPassword;
 
-	functions.checkStudentIdExistsOrNot(studentId, studentPassword, response, constants);
+	loginFunctions.checkStudentIdExistsOrNot(studentId, studentPassword, response, constants);
+
+});
+
+app.get('/contact', (request, response) => {
+
+	let studentId = request.query.studentId;
+
+	contactFunctions.fetchStudentContactDetails(studentId, response, constants);
 
 });
 
