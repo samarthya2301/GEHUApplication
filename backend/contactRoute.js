@@ -20,7 +20,8 @@ function fetchStudentContactDetails(studentId, response, constants) {
 				'collegeEmail': '',
 				'phoneOne': '',
 				'phoneTwo': '',
-				'studentImage': ''
+				'studentImage': '',
+				'studentName': ''
 			});
 
 		} else {
@@ -31,7 +32,8 @@ function fetchStudentContactDetails(studentId, response, constants) {
 				'collegeEmail': results[0].collegeEmail,
 				'phoneOne': results[0].phoneOne,
 				'phoneTwo': results[0].phoneTwo,
-				'studentImage': results[0].studentImage
+				'studentImage': results[0].studentImage,
+				'studentName': results[0].studentName
 			});
 			
 		}
