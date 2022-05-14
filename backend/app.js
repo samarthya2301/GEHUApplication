@@ -1,6 +1,7 @@
 const constants = require('./constants');
 const loginFunctions = require('./loginRoute');
 const contactFunctions = require('./contactRoute');
+const personalFunctions = require('./personalRoute');
 
 const app = constants.express();
 
@@ -21,9 +22,20 @@ app.get('/contact', (request, response) => {
 
 });
 
+app.get('/personal', (request, response) => {
+
+	let studentId = request.query.studentId;
+
+	personalFunctions.fetchStudentPersonalDetails(studentId, response, constants);
+
+});
+
 app.listen(constants.port, () => {
+
 	console.log(`Server started on: http://localhost:${constants.port}`);
 	console.log('\nServer Routes can be accessed from:-');
 	console.log('Login Route -> http://192.168.43.100:3000/login?studentId=[]&studentPassword=[]');
 	console.log('Contact Route -> http://192.168.43.100:3000/contact?studentId=[]');
+	console.log('Personal Route -> http://192.168.43.100:3000/personal?studentId=[]');
+
 });
