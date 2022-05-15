@@ -1,5 +1,7 @@
 package com.samarthya.gehuapplication.ui.home;
 
+import androidx.annotation.NonNull;
+
 import com.samarthya.gehuapplication.BottomNavigationActivity;
 
 import org.json.JSONException;
@@ -138,6 +140,12 @@ public class StudentPersonal {
 
 		return studentPersonalObject;
 
+	}
+
+	@NonNull
+	@Override
+	public String toString() {
+		return this.fatherName + " " + this.motherName + " " + this.dateOfBirth;
 	}
 
 }
