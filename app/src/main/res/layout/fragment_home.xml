@@ -153,11 +153,12 @@
 				android:id="@+id/tvFatherName"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
 				android:gravity="center"
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
-				android:layout_marginTop="5dp"
 				android:text="@string/father_name"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvStudentPersonalDetails" />
@@ -170,6 +171,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/mother_name"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvFatherName" />
@@ -182,6 +184,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/date_of_birth"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvMotherName" />
@@ -194,6 +197,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/college"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvDOB" />
@@ -206,6 +210,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/course"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvCollege" />
@@ -218,6 +223,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/branch"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvCourse" />
@@ -230,6 +236,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/semester"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvBranch" />
@@ -242,6 +249,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/section"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvSemester" />
@@ -254,6 +262,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/class_roll_no"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvSection" />
@@ -266,6 +275,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/intermediate"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvClassRollNo" />
@@ -278,6 +288,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp"
 				android:text="@string/highschool"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvIntermediate" />
@@ -290,6 +301,7 @@
 				android:paddingTop="5dp"
 				android:paddingBottom="20dp"
 				android:text="@string/admission_date"
+				android:textColor="#795548"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/tvHighschool" />
