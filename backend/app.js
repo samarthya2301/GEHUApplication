@@ -2,6 +2,7 @@ const constants = require('./constants');
 const loginFunctions = require('./loginRoute');
 const contactFunctions = require('./contactRoute');
 const personalFunctions = require('./personalRoute');
+const passwordFunctions = require('./passwordRoute');
 
 const app = constants.express();
 
@@ -30,6 +31,15 @@ app.get('/personal', (request, response) => {
 
 });
 
+app.post('/password', (request, response) => {
+
+	let studentId = request.query.studentId;
+	let newStudentPassword = request.query.newStudentPassword;
+
+	passwordFunctions.updateStudentPassword(studentId, newStudentPassword, response, constants);
+
+});
+
 app.listen(constants.port, () => {
 
 	console.log(`Server started on: http://localhost:${constants.port}`);
@@ -37,5 +47,6 @@ app.listen(constants.port, () => {
 	console.log('Login Route -> http://192.168.43.100:3000/login?studentId=[]&studentPassword=[]');
 	console.log('Contact Route -> http://192.168.43.100:3000/contact?studentId=[]');
 	console.log('Personal Route -> http://192.168.43.100:3000/personal?studentId=[]');
+	console.log('Post Password -> http://192.168.43.100:3000/password?studentId=[]&newStudentPassword=[]')
 
 });
