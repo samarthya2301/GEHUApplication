@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/primary_container"
+	tools:context=".ui.settings.SettingsFragment">
+
+	<LinearLayout
+		android:id="@+id/containerLLNewPassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="30dp"
+		android:layout_marginTop="50dp"
+		android:layout_marginEnd="30dp"
+		android:background="@drawable/view_border"
+		android:orientation="horizontal"
+		android:padding="10dp"
+		android:visibility="gone"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageView
+			android:id="@+id/ivStudentNewPassword"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:contentDescription="@string/student_password"
+			app:srcCompat="@drawable/vector_user_password" />
+
+		<View
+			android:id="@+id/dividerNewPassword"
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_marginStart="10dp"
+			android:background="?android:attr/listDivider" />
+
+		<EditText
+			android:id="@+id/etNewPassword"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="15dp"
+			android:layout_weight="4"
+			android:autofillHints="@string/student_password"
+			android:ems="10"
+			android:fontFamily="@font/ubuntu_medium"
+			android:hint="@string/new_password"
+			android:inputType="textPassword"
+			android:minHeight="48dp"
+			android:textColor="@color/on_primary_container"
+			android:textColorHint="#795548"
+			tools:ignore="DuplicateSpeakableTextCheck" />
+
+		<View
+			android:id="@+id/dividerNewPasswordBtn"
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:background="?android:attr/listDivider" />
+
+		<ImageView
+			android:id="@+id/ivNewPassrwordSetVisible"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:clickable="true"
+			android:contentDescription="@string/student_password"
+			android:focusable="true"
+			app:srcCompat="@drawable/make_password_visible"
+			tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/containerLLConfirmPassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="30dp"
+		android:layout_marginTop="50dp"
+		android:layout_marginEnd="30dp"
+		android:background="@drawable/view_border"
+		android:orientation="horizontal"
+		android:padding="10dp"
+		android:visibility="gone"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/containerLLNewPassword">
+
+		<ImageView
+			android:id="@+id/ivStudentConfirmPassword"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:contentDescription="@string/student_password"
+			app:srcCompat="@drawable/vector_user_password" />
+
+		<View
+			android:id="@+id/dividerConfirmPassword"
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_marginStart="10dp"
+			android:background="?android:attr/listDivider" />
+
+		<EditText
+			android:id="@+id/etConfirmPassword"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="15dp"
+			android:layout_weight="4"
+			android:autofillHints="@string/student_password"
+			android:ems="10"
+			android:fontFamily="@font/ubuntu_medium"
+			android:hint="@string/confirmation"
+			android:inputType="textPassword"
+			android:minHeight="48dp"
+			android:textColor="@color/on_primary_container"
+			android:textColorHint="#795548"
+			tools:ignore="DuplicateSpeakableTextCheck" />
+
+		<View
+			android:id="@+id/dividerConfirmPasswordBtn"
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:background="?android:attr/listDivider" />
+
+		<ImageView
+			android:id="@+id/ivConfirmPasswordSetVisible"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:clickable="true"
+			android:contentDescription="@string/student_password"
+			android:focusable="true"
+			app:srcCompat="@drawable/make_password_visible"
+			tools:ignore="TouchTargetSizeCheck" />
+
+	</LinearLayout>
+
+	<Button
+		android:id="@+id/btnChangePassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="50dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginEnd="50dp"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
+		android:text="@string/change_password"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/containerLLConfirmPassword" />
+
+	<Button
+		android:id="@+id/btnLogout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="50dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginEnd="50dp"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
+		android:text="@string/logout"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btnChangePassword" />
+
+	<TextView
+		android:id="@+id/tvEnterNewPassword"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:text="@string/enter_new_password"
+		android:textColor="@color/on_primary_container"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toTopOf="@+id/containerLLNewPassword"
+		app:layout_constraintStart_toStartOf="@+id/containerLLNewPassword" />
+
+	<TextView
+		android:id="@+id/tvEnterConfirmPassword"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:text="@string/enter_new_password_again"
+		android:textColor="@color/on_primary_container"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toTopOf="@+id/containerLLConfirmPassword"
+		app:layout_constraintStart_toStartOf="@+id/containerLLConfirmPassword" />
+
+	<TextView
+		android:id="@+id/tvPasswordChangedSuccessfully"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:textColor="@color/primary_variant"
+		android:textSize="25sp"
+		android:layout_marginStart="30dp"
+		android:layout_marginTop="50dp"
+		android:layout_marginEnd="30dp"
+		android:visibility="gone"
+		android:text="@string/password_changed_successfully"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btnLogout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
