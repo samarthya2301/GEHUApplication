@@ -44,9 +44,9 @@ app.listen(constants.port, () => {
 
 	console.log(`Server started on: http://localhost:${constants.port}`);
 	console.log('\nServer Routes can be accessed from:-');
-	console.log('Login Route -> http://192.168.43.100:3000/login?studentId=[]&studentPassword=[]');
-	console.log('Contact Route -> http://192.168.43.100:3000/contact?studentId=[]');
-	console.log('Personal Route -> http://192.168.43.100:3000/personal?studentId=[]');
-	console.log('Post Password -> http://192.168.43.100:3000/password?studentId=[]&newStudentPassword=[]')
+	console.log('Login Route (GET) -> http://192.168.43.100:3000/login?studentId=[]&studentPassword=[]');
+	console.log('Contact Route (GET) -> http://192.168.43.100:3000/contact?studentId=[]');
+	console.log('Personal Route (GET) -> http://192.168.43.100:3000/personal?studentId=[]');
+	console.log('Post Password (POST) -> http://192.168.43.100:3000/password?studentId=[]&newStudentPassword=[]')
 
 });
