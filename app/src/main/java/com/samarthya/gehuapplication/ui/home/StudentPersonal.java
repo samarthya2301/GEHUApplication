@@ -78,15 +78,15 @@ public class StudentPersonal {
 	public static StudentPersonal getStudentPersonalFromServer() throws IOException, JSONException {
 
 		String studentId = BottomNavigationActivity.staticStudentIdForFragments;
-		URL backendContactUrl = new URL("http://192.168.43.100:3000/personal?" +
+		URL backendPersonalUrl = new URL("http://192.168.43.100:3000/personal?" +
 				"studentId=" + studentId);
 
 		HttpURLConnection httpURLConnection;
 		InputStream inputStream;
 		Scanner inputStreamReader;
-		StringBuilder contactJsonResponse = new StringBuilder();
+		StringBuilder personalJsonResponse = new StringBuilder();
 
-		httpURLConnection = (HttpURLConnection) backendContactUrl.openConnection();
+		httpURLConnection = (HttpURLConnection) backendPersonalUrl.openConnection();
 		httpURLConnection.setRequestMethod("GET");
 		httpURLConnection.setConnectTimeout(10000);
 		httpURLConnection.setReadTimeout(10000);
@@ -96,14 +96,14 @@ public class StudentPersonal {
 		inputStreamReader = new Scanner(inputStream);
 
 		while (inputStreamReader.hasNext()) {
-			contactJsonResponse.append(inputStreamReader.nextLine());
+			personalJsonResponse.append(inputStreamReader.nextLine());
 		}
 
 		inputStreamReader.close();
 		inputStream.close();
 		httpURLConnection.disconnect();
 
-		JSONObject root = new JSONObject(contactJsonResponse.toString());
+		JSONObject root = new JSONObject(personalJsonResponse.toString());
 		boolean resultsAvailable = root.getBoolean("resultsAvailable");
 		String fatherName = root.getString("fatherName");
 		String motherName = root.getString("motherName");
