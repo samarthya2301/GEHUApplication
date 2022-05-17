@@ -33,7 +33,9 @@ function fetchStudentPersonalDetails(studentId, response, constants) {
 		} else {
 
 			let dateOfBirth = results[0].dateOfBirth.toDateString();
+			dateOfBirth = dateOfBirth.substring(4, dateOfBirth.length);
 			let admissionDate = results[0].admissionDate.toDateString();
+			admissionDate = admissionDate.substring(4, admissionDate.length);
 
 			response.status(200).json({
 				'resultsAvailable': true,
