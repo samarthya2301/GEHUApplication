@@ -3,6 +3,7 @@ const loginFunctions = require('./loginRoute');
 const contactFunctions = require('./contactRoute');
 const personalFunctions = require('./personalRoute');
 const passwordFunctions = require('./passwordRoute');
+const downloadsFunctions = require('./downloadsRoute');
 
 const app = constants.express();
 
@@ -40,6 +41,25 @@ app.post('/password', (request, response) => {
 
 });
 
+app.get('/downloads/exam', (request, response) => {
+	
+	let studentId = request.query.studentId;
+	let semester = request.query.semester;
+
+	downloadsFunctions.getStudentExamFiles(studentId, semester, response);
+
+});
+
+app.get('/downloads/fee', (request, response) => {
+	
+	let studentId = request.query.studentId;
+	let semester = request.query.semester;
+
+	downloadsFunctions.getStudentFeeFiles(studentId, semester, response);
+
+});
+
+
 app.listen(constants.port, () => {
 
 	console.log(`Server started on: http://localhost:${constants.port}`);
@@ -47,6 +67,7 @@ app.listen(constants.port, () => {
 	console.log('Login Route (GET) -> http://192.168.43.100:3000/login?studentId=[]&studentPassword=[]');
 	console.log('Contact Route (GET) -> http://192.168.43.100:3000/contact?studentId=[]');
 	console.log('Personal Route (GET) -> http://192.168.43.100:3000/personal?studentId=[]');
-	console.log('Post Password (POST) -> http://192.168.43.100:3000/password?studentId=[]&newStudentPassword=[]')
+	console.log('Post Password (POST) -> http://192.168.43.100:3000/password?studentId=[]&newStudentPassword=[]');
+	console.log('Download Files (GET) -> http://192.168.43.100:3000/(exam||fee)?studentId=[]&semester=[]');
 
 });
