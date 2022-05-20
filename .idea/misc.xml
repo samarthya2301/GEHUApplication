@@ -3,12 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_baseline_local_phone_24.xml" value="0.237" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_college_email_24dp.xml" value="0.237" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.241" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_person_no_image_24.xml" value="0.237" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_personal_details_24dp.xml" value="0.237" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_personal_email_24dp.xml" value="0.237" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_phone_number_24dp.xml" value="0.237" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_settings_black_24dp.xml" value="0.241" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_student_id_24dp.xml" value="0.237" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/make_password_invisible.xml" value="0.2265" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/make_password_visible.xml" value="0.2265" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/vector_user_id.xml" value="0.2265" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/vector_user_password.xml" value="0.2265" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/view_border.xml" value="0.2265" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.16666666666666666" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/fragment_dashboard.xml" value="0.16666666666666666" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/fragment_notifications.xml" value="0.16666666666666666" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/layout/fragment_settings.xml" value="0.2" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/menu/bottom_nav_menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.237" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.237" />
       </map>
     </option>
   </component>
