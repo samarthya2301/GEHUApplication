@@ -14,11 +14,13 @@
 	<color name="tertiary">#7b581b</color>
 	<color name="error">#b3261e</color>
 
+	<!-- container colors -->
 	<color name="primary_container">#ffdadb</color>
 	<color name="secondary_container">#ffdad9</color>
 	<color name="tertiary_container">#ffddab</color>
 	<color name="error_container">#f9dedc</color>
 
+	<!-- text colors -->
 	<color name="on_primary_container">#400009</color>
 	<color name="on_secondary_container">#2c1516</color>
 	<color name="on_tertiary_container">#291800</color>
