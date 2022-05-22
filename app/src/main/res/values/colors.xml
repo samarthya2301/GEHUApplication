@@ -13,6 +13,7 @@
 	<color name="secondary">#775657</color>
 	<color name="tertiary">#7b581b</color>
 	<color name="error">#b3261e</color>
+	<color name="success">#388E3C</color>
 
 	<!-- container colors -->
 	<color name="primary_container">#ffdadb</color>
