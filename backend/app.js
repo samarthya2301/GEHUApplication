@@ -68,6 +68,6 @@ app.listen(constants.port, () => {
 	console.log('Contact Route (GET) -> http://192.168.43.100:3000/contact?studentId=[]');
 	console.log('Personal Route (GET) -> http://192.168.43.100:3000/personal?studentId=[]');
 	console.log('Post Password (POST) -> http://192.168.43.100:3000/password?studentId=[]&newStudentPassword=[]');
-	console.log('Download Files (GET) -> http://192.168.43.100:3000/(exam||fee)?studentId=[]&semester=[]');
+	console.log('Download Files (GET) -> http://192.168.43.100:3000/downloads/(exam||fee)?studentId=[]&semester=[]');
 
 });
