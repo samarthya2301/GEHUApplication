@@ -44,12 +44,23 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
+	<TextView
+		android:id="@+id/tvEnterStudentId"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/student_id"
+		android:layout_marginBottom="5dp"
+		android:textColor="@color/on_primary_container"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toTopOf="@+id/containerLLStudentId"
+		app:layout_constraintStart_toStartOf="@+id/containerLLStudentId" />
+
 	<LinearLayout
 		android:id="@+id/containerLLStudentId"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		android:layout_marginTop="30dp"
+		android:layout_marginTop="40dp"
 		android:layout_marginStart="30dp"
 		android:layout_marginEnd="30dp"
 		android:padding="10dp"
@@ -91,6 +102,17 @@
 
 	</LinearLayout>
 
+	<TextView
+		android:id="@+id/tvEnterStudentPassword"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/student_password"
+		android:layout_marginBottom="5dp"
+		android:textColor="@color/on_primary_container"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toTopOf="@+id/containerLLStudentPassword"
+		app:layout_constraintStart_toStartOf="@+id/containerLLStudentPassword" />
+
 	<LinearLayout
 		android:id="@+id/containerLLStudentPassword"
 		android:layout_width="match_parent"
@@ -100,13 +122,13 @@
 		android:layout_marginEnd="30dp"
 		android:background="@drawable/view_border"
 		android:padding="10dp"
-		android:layout_marginTop="10dp"
+		android:layout_marginTop="40dp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/containerLLStudentId">
 
 		<ImageView
-			android:id="@+id/ivStudentPasswordVector"
+			android:id="@+id/ivStudentPassword"
 			android:layout_height="wrap_content"
 			android:layout_width="0dp"
 			android:layout_weight="1"
@@ -145,7 +167,7 @@
 			android:background="?android:attr/listDivider" />
 
 		<ImageView
-			android:id="@+id/ivStudentPasswordSetVisible"
+			android:id="@+id/ivStudentPassrwordSetVisible"
 			android:layout_height="wrap_content"
 			android:layout_width="0dp"
 			android:layout_weight="1"
@@ -158,10 +180,11 @@
 		android:id="@+id/cbRememberStudentId"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
 		android:fontFamily="@font/ubuntu_medium"
-		android:textSize="15sp"
 		android:text="@string/remember_student_id"
 		android:textColor="@color/on_primary_container"
+		android:textSize="16sp"
 		app:layout_constraintStart_toStartOf="@+id/containerLLStudentPassword"
 		app:layout_constraintTop_toBottomOf="@+id/containerLLStudentPassword" />
 
@@ -173,13 +196,24 @@
 		android:layout_marginEnd="50dp"
 		android:layout_marginTop="30dp"
 		android:fontFamily="@font/ubuntu_bold"
-		android:paddingTop="15dp"
-		android:paddingBottom="15dp"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
 		android:text="@string/login"
-		android:textSize="20sp"
+		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/cbRememberStudentId"
 		tools:ignore="DuplicateSpeakableTextCheck" />
+
+	<TextView
+		android:id="@+id/tvErrorMessage"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		android:textColor="@color/error"
+		android:textSize="17sp"
+		app:layout_constraintBottom_toTopOf="@+id/btnStudentLogin"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
