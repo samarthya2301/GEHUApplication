@@ -4,6 +4,7 @@ const contactFunctions = require('./contactRoute');
 const personalFunctions = require('./personalRoute');
 const passwordFunctions = require('./passwordRoute');
 const downloadsFunctions = require('./downloadsRoute');
+const dashboardFunctions = require('./dashboardRoute');
 
 const app = constants.express();
 
@@ -59,6 +60,14 @@ app.get('/downloads/fee', (request, response) => {
 
 });
 
+app.get('/dashboard', (request, response) => {
+
+	let studentId = request.query.studentId;
+	let semester = request.query.semester;
+
+	dashboardFunctions.getDashboard(studentId, semester, response, constants);
+
+});
 
 app.listen(constants.port, () => {
 
