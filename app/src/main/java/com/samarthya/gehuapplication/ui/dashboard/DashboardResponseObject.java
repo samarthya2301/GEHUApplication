@@ -220,6 +220,30 @@ public class DashboardResponseObject {
 
 	}
 
+	public boolean getResultsAvailable() {
+		return this.resultsAvailable;
+	}
+
+	public int getDashboardResponseSize() {
+		return this.dashboardResponseSize;
+	}
+
+	public ExamResponse getExamResponse() {
+		return this.examResponse;
+	}
+
+	public FeeResponse getFeeResponse() {
+		return this.feeResponse;
+	}
+
+	public AttendanceResponse getAttendanceResponse() {
+		return this.attendanceResponse;
+	}
+
+	public String getMsg() {
+		return this.msg;
+	}
+
 	@NonNull
 	@Override
 	public String toString() {
@@ -301,10 +325,12 @@ public class DashboardResponseObject {
 
 	}
 
-	public static DashboardResponseObject fetchDashboardResponse(String studentId, String semester) {
+	public static DashboardResponseObject fetchDashboardResponse
+			(String studentId, String semester) {
 
 		ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-		Future<DashboardResponseObject> dashboardResponseObjectFuture = singleThreadExecutor.submit(() -> {
+		Future<DashboardResponseObject> dashboardResponseObjectFuture =
+				singleThreadExecutor.submit(() -> {
 
 			try {
 				return fetchDashboardResponseUtil(studentId, semester);
