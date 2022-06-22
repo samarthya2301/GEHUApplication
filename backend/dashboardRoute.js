@@ -292,8 +292,8 @@ function getAttendanceDashboardOverall(studentId, constants) {
 				responseJson = {
 					'dashboardField': 'attendanceOverall',
 					'resultsAvailable': false,
-					'daysAttendedOverall': 0,
-					'daysTotalOverall': 0,
+					'daysAttended': 0,
+					'daysTotal': 0,
 					'attendancePercentOverall': 0.00,
 					'msg': 'Internal Server Error!'
 				};
@@ -320,8 +320,8 @@ function getAttendanceDashboardOverall(studentId, constants) {
 				responseJson = {
 					'dashboardField': 'attendanceOverall',
 					'resultsAvailable': true,
-					'daysAttendedOverall': results[0].days_attended_overall,
-					'daysTotalOverall': results[0].days_total_overall,
+					'daysAttended': results[0].days_attended_overall,
+					'daysTotal': results[0].days_total_overall,
 					'attendancePercentOverall': attendancePercentOverall,
 					'msg': 'Successful!'
 				};
@@ -333,8 +333,8 @@ function getAttendanceDashboardOverall(studentId, constants) {
 				responseJson = {
 					'dashboardField': 'attendanceOverall',
 					'resultsAvailable': false,
-					'daysAttendedOverall': 0,
-					'daysTotalOverall': 0,
+					'daysAttended': 0,
+					'daysTotal': 0,
 					'attendancePercentOverall': 0.00,
 					'msg': 'Database Error, Wrong Fields!'
 				};
