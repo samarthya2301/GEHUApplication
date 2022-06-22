@@ -19,31 +19,45 @@ import java.util.concurrent.Future;
 class ExamResponse {
 
 	boolean resultsAvailable;
+	float sgpa;
 	float cgpa;
 	String msg;
 
 	ExamResponse() {
 
 		this.resultsAvailable = false;
+		this.sgpa = 0;
 		this.cgpa = 0;
 		this.msg = "";
 
 	}
 
-	ExamResponse(boolean resultsAvailable, float cgpa, String msg) {
+	ExamResponse(boolean resultsAvailable, float sgpa, float cgpa, String msg, boolean isSgpa) {
 
 		this.resultsAvailable = resultsAvailable;
-		this.cgpa = cgpa;
+		if (isSgpa) {
+			this.sgpa = sgpa;
+		} else {
+			this.cgpa = cgpa;
+		}
 		this.msg = msg;
 
 	}
 
-	public static ExamResponse getExamResponse(JSONObject obj) {
+	public void setSgpa(float sgpa) {
+		this.sgpa = sgpa;
+	}
+
+	public void setCgpa(float cgpa) {
+		this.cgpa = cgpa;
+	}
+
+	public static ExamResponse getExamResponse(JSONObject examJson, boolean isSgpa) {
 
 		ExamResponse examResponse;
 
 		try {
-			examResponse = parseExamResponse(obj);
+			examResponse = parseExamResponse(examJson, isSgpa);
 		} catch (JSONException e) {
 
 			e.printStackTrace();
@@ -55,14 +69,27 @@ class ExamResponse {
 
 	}
 
-	private static ExamResponse parseExamResponse(JSONObject obj) throws JSONException {
+	private static ExamResponse parseExamResponse(JSONObject examJson, boolean isSgpa)
+			throws JSONException {
 
-		boolean resultsAvailable = obj.getBoolean("resultsAvailable");
-		float cgpa = (float) obj.getDouble("cgpa");
-		String msg = obj.getString("msg");
+		boolean resultsAvailable = examJson.getBoolean("resultsAvailable");
+		float sgpa = 0;
+		float cgpa = 0;
+		if (isSgpa) {
+			sgpa = (float) examJson.getDouble("sgpa");
+		} else {
+			cgpa = (float) examJson.getDouble("cgpa");
+		}
+		String msg = examJson.getString("msg");
 
-		return new ExamResponse(resultsAvailable, cgpa, msg);
+		return new ExamResponse(resultsAvailable, sgpa, cgpa, msg, isSgpa);
 
+	}
+
+	@NonNull
+	@Override
+	public String toString() {
+		return "SGPA: " + this.sgpa + " CGPA: " + this.cgpa + "\n";
 	}
 
 }
@@ -131,7 +158,8 @@ class AttendanceResponse {
 	boolean resultsAvailable;
 	int daysAttended;
 	int daysTotal;
-	float attendancePercent;
+	float attendancePercent = 0;
+	float overallAttendancePercent = 0;
 	String msg;
 
 	AttendanceResponse() {
@@ -140,27 +168,40 @@ class AttendanceResponse {
 		this.daysAttended = 0;
 		this.daysTotal = 0;
 		this.attendancePercent = 0.0f;
+		this.overallAttendancePercent = 0.0f;
 		this.msg = "";
 
 	}
 
 	AttendanceResponse(boolean resultsAvailable, int daysAttended, int daysTotal,
-				float attendancePercent, String msg) {
+					   float attendancePercent, float overallAttendancePercent, String msg,
+					   boolean isOverall) {
 
 		this.resultsAvailable = resultsAvailable;
 		this.daysAttended = daysAttended;
 		this.daysTotal = daysTotal;
-		this.attendancePercent = attendancePercent;
+		if (isOverall) {
+			this.overallAttendancePercent = overallAttendancePercent;
+		} else {
+			this.attendancePercent = attendancePercent;
+		}
 		this.msg = msg;
 
 	}
 
-	public static AttendanceResponse getAttendanceResponse(JSONObject obj) {
+	public void setAttendancePercent(float attendancePercent) {
+		this.attendancePercent = attendancePercent;
+	}
+
+	public void setOverallAttendancePercent(float overallAttendancePercent) {
+		this.overallAttendancePercent = overallAttendancePercent;
+	}
+	public static AttendanceResponse getAttendanceResponse(JSONObject obj, boolean isOverall) {
 
 		AttendanceResponse attendanceResponse;
 
 		try {
-			attendanceResponse = parseAttendanceResponse(obj);
+			attendanceResponse = parseAttendanceResponse(obj, isOverall);
 		} catch (JSONException e) {
 
 			e.printStackTrace();
@@ -172,17 +213,32 @@ class AttendanceResponse {
 
 	}
 
-	private static AttendanceResponse parseAttendanceResponse(JSONObject obj) throws JSONException {
+	private static AttendanceResponse parseAttendanceResponse(JSONObject obj, boolean isOverall)
+			throws JSONException {
 
 		boolean resultsAvailable = obj.getBoolean("resultsAvailable");
 		int daysAttended = obj.getInt("daysAttended");
 		int daysTotal = obj.getInt("daysTotal");
-		float attendancePercent = (float) obj.getDouble("attendancePercent");
+		float attendancePercent = 0;
+		float attendancePercentOverall = 0;
+		if (isOverall) {
+			attendancePercentOverall = (float) obj.getDouble("attendancePercentOverall");
+		} else {
+			attendancePercent = (float) obj.getDouble("attendancePercent");
+		}
 		String msg = obj.getString("msg");
 
-		return new AttendanceResponse
-				(resultsAvailable ,daysAttended, daysTotal, attendancePercent, msg);
+		return new AttendanceResponse(
+				resultsAvailable ,daysAttended, daysTotal, attendancePercent,
+				attendancePercentOverall, msg, isOverall
+		);
 
+	}
+
+	@NonNull
+	@Override
+	public String toString() {
+		return "Attendance: " + this.attendancePercent + " Overall: " + this.overallAttendancePercent;
 	}
 
 }
@@ -249,7 +305,7 @@ public class DashboardResponseObject {
 	public String toString() {
 
 		return ".\nResponse Size: " + this.dashboardResponseSize +
-				"\nCgpa: " + this.examResponse.cgpa +
+				"\nSgpa: " + this.examResponse.sgpa +
 				"\nFee Paid: " + this.feeResponse.paid +
 				"\nAttendance: " + this.attendanceResponse.attendancePercent +
 				"\nMessage: " + this.msg;
@@ -303,7 +359,19 @@ public class DashboardResponseObject {
 			switch (dashboardField) {
 
 				case "exam":
-					examResponse = ExamResponse.getExamResponse(obj);
+					if (examResponse == null) {
+						examResponse = ExamResponse.getExamResponse(obj, true);
+					} else {
+						examResponse.setSgpa((float)obj.getDouble("sgpa"));
+					}
+					break;
+
+				case "examOverall":
+					if (examResponse == null) {
+						examResponse = ExamResponse.getExamResponse(obj, false);
+					} else {
+						examResponse.setCgpa((float)obj.getDouble("cgpa"));
+					}
 					break;
 
 				case "fee":
@@ -311,7 +379,19 @@ public class DashboardResponseObject {
 					break;
 
 				case "attendance":
-					attendanceResponse = AttendanceResponse.getAttendanceResponse(obj);
+					if (attendanceResponse == null) {
+						attendanceResponse = AttendanceResponse.getAttendanceResponse(obj, false);
+					} else {
+						attendanceResponse.setAttendancePercent((float)obj.getDouble("attendancePercent"));
+					}
+					break;
+
+				case "attendanceOverall":
+					if (attendanceResponse == null) {
+						attendanceResponse = AttendanceResponse.getAttendanceResponse(obj, true);
+					} else {
+						attendanceResponse.setOverallAttendancePercent((float)obj.getDouble("attendancePercentOverall"));
+					}
 					break;
 
 			}
