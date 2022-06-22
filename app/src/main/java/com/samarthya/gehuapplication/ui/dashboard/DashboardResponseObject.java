@@ -238,7 +238,10 @@ class AttendanceResponse {
 	@NonNull
 	@Override
 	public String toString() {
-		return "Attendance: " + this.attendancePercent + " Overall: " + this.overallAttendancePercent;
+		return "Attendance: " +
+				this.attendancePercent +
+				" Overall: " +
+				this.overallAttendancePercent;
 	}
 
 }
@@ -380,17 +383,21 @@ public class DashboardResponseObject {
 
 				case "attendance":
 					if (attendanceResponse == null) {
-						attendanceResponse = AttendanceResponse.getAttendanceResponse(obj, false);
+						attendanceResponse = AttendanceResponse
+								.getAttendanceResponse(obj, false);
 					} else {
-						attendanceResponse.setAttendancePercent((float)obj.getDouble("attendancePercent"));
+						attendanceResponse.setAttendancePercent
+								((float)obj.getDouble("attendancePercent"));
 					}
 					break;
 
 				case "attendanceOverall":
 					if (attendanceResponse == null) {
-						attendanceResponse = AttendanceResponse.getAttendanceResponse(obj, true);
+						attendanceResponse = AttendanceResponse
+								.getAttendanceResponse(obj, true);
 					} else {
-						attendanceResponse.setOverallAttendancePercent((float)obj.getDouble("attendancePercentOverall"));
+						attendanceResponse.setOverallAttendancePercent
+								((float)obj.getDouble("attendancePercentOverall"));
 					}
 					break;
 
