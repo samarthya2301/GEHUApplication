@@ -75,5 +75,13 @@
 	<string name="download_unsuccessful">
 		Download unsuccessful, the file has not been published yet!
 	</string>
+	<string name="dashboard_field">Dashboard Field</string>
+	<string name="dashboard_for_semester">Dashboard for Semester:</string>
+	<string name="dashboard_value">Dashboard Value</string>
+
+<!--	resources for dashboard fields-->
+	<string name="attendance">Attendance</string>
+	<string name="sgpa">SGPA</string>
+	<string name="fees">Fees</string>
 
 </resources>
