@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">GEHUApplication</string>
+	<string name="app_name">Graphic Era Android</string>
 	<string name="graphic_era_hill_university_image">Graphic Era Hill University Image</string>
 	<string name="graphic_era_hill_university_logo">Graphic Era Hill University Logo</string>
 	<string name="login">LOGIN</string>
@@ -75,13 +75,19 @@
 	<string name="download_unsuccessful">
 		Download unsuccessful, the file has not been published yet!
 	</string>
+
+<!--	resources for dashboard fields-->
 	<string name="dashboard_field">Dashboard Field</string>
 	<string name="dashboard_for_semester">Dashboard for Semester:</string>
 	<string name="dashboard_value">Dashboard Value</string>
-
-<!--	resources for dashboard fields-->
 	<string name="attendance">Attendance</string>
 	<string name="sgpa">SGPA</string>
 	<string name="fees">Fees</string>
+	<string name="dashboard_key_1">Dashboard Key 1</string>
+	<string name="dashboard_key_2">Dashboard Key 2</string>
+	<string name="dashboard_value_1">Dashboard Value 1</string>
+	<string name="dashboard_value_2">Dashboard Value 2</string>
+	<string name="rupee_symbol">\u20B9</string>
+	<string name="please_wait">Please Wait…</string>
 
 </resources>
