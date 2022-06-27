@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.samarthya.gehuapplication.BottomNavigationActivity;
+import com.samarthya.gehuapplication.Server;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,8 +30,8 @@ public class SettingsViewModel extends ViewModel {
 	public boolean postNewPassword(String newPassword) throws IOException, JSONException {
 
 		String studentId = BottomNavigationActivity.staticStudentIdForFragments;
-		URL backendPasswordUrl = new URL("http://192.168.43.100:3000/password?" +
-				"studentId=" + studentId + "&" +
+		URL backendPasswordUrl = new URL("http://" + Server.SOCKET_ADDRESS +
+				"/password?" + "studentId=" + studentId + "&" +
 				"newStudentPassword=" + newPassword);
 
 		HttpURLConnection httpURLConnection;
