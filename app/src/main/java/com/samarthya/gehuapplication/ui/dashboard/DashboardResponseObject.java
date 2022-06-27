@@ -1,6 +1,10 @@
 package com.samarthya.gehuapplication.ui.dashboard;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
+
+import com.samarthya.gehuapplication.Server;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,10 +15,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class DashboardResponseObject {
 
@@ -53,10 +56,6 @@ public class DashboardResponseObject {
 		return this.resultsAvailable;
 	}
 
-	public int getDashboardResponseSize() {
-		return this.dashboardResponseSize;
-	}
-
 	public ExamResponse getExamResponse() {
 		return this.examResponse;
 	}
@@ -67,10 +66,6 @@ public class DashboardResponseObject {
 
 	public AttendanceResponse getAttendanceResponse() {
 		return this.attendanceResponse;
-	}
-
-	public String getMsg() {
-		return this.msg;
 	}
 
 	@NonNull
@@ -88,8 +83,8 @@ public class DashboardResponseObject {
 	private static DashboardResponseObject fetchDashboardResponseUtil
 			(String studentId, String semester) throws IOException, JSONException {
 
-		URL dashboardResponseUrl = new URL("http://192.168.43.100:3000/dashboard?studentId=" +
-				studentId + "&semester=" + semester);
+		URL dashboardResponseUrl = new URL("http://" + Server.SOCKET_ADDRESS +
+				"/dashboard?studentId=" + studentId + "&semester=" + semester);
 
 		HttpURLConnection httpURLConnection;
 		InputStream inputStream;
@@ -186,27 +181,27 @@ public class DashboardResponseObject {
 			(String studentId, String semester) {
 
 		ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-		Future<DashboardResponseObject> dashboardResponseObjectFuture =
-				singleThreadExecutor.submit(() -> {
+		AtomicReference<DashboardResponseObject> dashboardResponseObject = new AtomicReference<>();
+		dashboardResponseObject.set(null);
 
+		singleThreadExecutor.execute(() -> {
+
+			// fetch
 			try {
-				return fetchDashboardResponseUtil(studentId, semester);
-			} catch (JSONException | IOException e) {
+				dashboardResponseObject.set(fetchDashboardResponseUtil(studentId, semester));
+			} catch (IOException | JSONException e) {
 
+				dashboardResponseObject.set(new DashboardResponseObject());
 				e.printStackTrace();
-				return new DashboardResponseObject();
 
 			}
 
 		});
 
-		try {
-			return dashboardResponseObjectFuture.get();
-		} catch (ExecutionException | InterruptedException e) {
-			e.printStackTrace();
-		}
+		while (dashboardResponseObject.get() == null);
 
-		return new DashboardResponseObject();
+		Log.d("xxx", "Second");
+		return dashboardResponseObject.get();
 
 	}
 
