@@ -31,23 +31,24 @@
 		app:layout_constraintTop_toBottomOf="@+id/dashboardField" />
 
 	<TextView
-		android:id="@+id/dashboardKey2"
+		android:id="@+id/dashboardValue1"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:text="@string/dashboard_value_1"
 		android:layout_marginTop="10dp"
 		android:layout_marginEnd="20dp"
-		android:text="@string/dashboard_key_2"
 		android:textColor="@color/primary_container"
 		android:textSize="14sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/dashboardField" />
 
 	<TextView
-		android:id="@+id/dashboardValue1"
+		android:id="@+id/dashboardKey2"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/dashboard_value_1"
+		android:text="@string/dashboard_key_2"
 		android:layout_marginStart="20dp"
+		android:layout_marginTop="10dp"
 		android:textColor="@color/primary_container"
 		android:textSize="14sp"
 		app:layout_constraintStart_toStartOf="parent"
@@ -58,10 +59,11 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginEnd="20dp"
+		android:layout_marginTop="10dp"
 		android:text="@string/dashboard_value_2"
 		android:textColor="@color/primary_container"
 		android:textSize="14sp"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/dashboardKey2" />
+		app:layout_constraintTop_toBottomOf="@+id/dashboardValue1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
