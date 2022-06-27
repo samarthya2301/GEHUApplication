@@ -36,6 +36,8 @@
 		android:layout_marginTop="60dp"
 		android:layout_marginEnd="30dp"
 		android:text="@string/download_exam_results"
+		android:background="@drawable/login_button"
+		android:textColor="@color/primary_container"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/tvSelectSemesterDownloads" />
@@ -48,6 +50,8 @@
 		android:layout_marginTop="20dp"
 		android:layout_marginEnd="30dp"
 		android:text="@string/download_fee_receipts"
+		android:background="@drawable/login_button"
+		android:textColor="@color/primary_container"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/btnDownloadExamResult" />
@@ -60,6 +64,8 @@
 		android:layout_marginTop="20dp"
 		android:layout_marginEnd="30dp"
 		android:text="@string/download_notices_updates"
+		android:background="@drawable/login_button"
+		android:textColor="@color/primary_container"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/btnDownloadFeeReceipt" />
