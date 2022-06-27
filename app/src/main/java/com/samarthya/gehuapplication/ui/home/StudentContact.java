@@ -3,6 +3,7 @@ package com.samarthya.gehuapplication.ui.home;
 import androidx.annotation.NonNull;
 
 import com.samarthya.gehuapplication.BottomNavigationActivity;
+import com.samarthya.gehuapplication.Server;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,8 +64,8 @@ public class StudentContact {
 	private static StudentContact getStudentContactFromServer() throws IOException, JSONException {
 
 		String studentId = BottomNavigationActivity.staticStudentIdForFragments;
-		URL backendContactUrl = new URL("http://192.168.43.100:3000/contact?" +
-				"studentId=" + studentId);
+		URL backendContactUrl = new URL("http://" + Server.SOCKET_ADDRESS +
+				"/contact?" + "studentId=" + studentId);
 
 		HttpURLConnection httpURLConnection;
 		InputStream inputStream;
