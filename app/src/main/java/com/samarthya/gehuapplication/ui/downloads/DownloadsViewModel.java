@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.samarthya.gehuapplication.BottomNavigationActivity;
+import com.samarthya.gehuapplication.Server;
 import com.samarthya.gehuapplication.R;
 import com.samarthya.gehuapplication.databinding.FragmentDownloadsBinding;
 
@@ -79,7 +80,7 @@ public class DownloadsViewModel extends ViewModel {
 		File file = new File(view.getContext().getExternalFilesDir(null), fileType);
 
 		Uri uri = Uri.parse(
-				"http://192.168.43.100:3000/downloads/" +
+				"http://" + Server.SOCKET_ADDRESS + "/downloads/" +
 						fileType +
 						"?studentId=" + BottomNavigationActivity.staticStudentIdForFragments +
 						"&semester=" + semesterSelectedFromSpinner
