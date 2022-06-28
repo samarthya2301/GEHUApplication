@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/custom_bottom_navigation.xml" value="0.264" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/custom_cursor.xml" value="0.1455" />
+        <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/dashboard_field.xml" value="0.237" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_baseline_local_phone_24.xml" value="0.237" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_college_email_24dp.xml" value="0.237" />
         <entry key="..\:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/res/drawable/ic_download_24dp.xml" value="0.237" />
