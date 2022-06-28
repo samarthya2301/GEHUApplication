@@ -4,7 +4,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:paddingBottom="20dp"
-	android:background="@color/on_primary_container">
+	android:background="@drawable/dashboard_field">
 
 	<TextView
 		android:id="@+id/dashboardField"
