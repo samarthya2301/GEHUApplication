@@ -261,6 +261,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onResume() {
 
 		super.onResume();
+		tvErrorMessage.setVisibility(View.GONE);
 		etStudentPassword.setText("");
 
 	}
