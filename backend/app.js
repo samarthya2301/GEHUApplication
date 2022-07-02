@@ -5,6 +5,7 @@ const personalFunctions = require('./personalRoute');
 const passwordFunctions = require('./passwordRoute');
 const downloadsFunctions = require('./downloadsRoute');
 const dashboardFunctions = require('./dashboardRoute');
+const SERVER_IP = require('./server');
 
 const app = constants.express();
 
@@ -73,11 +74,11 @@ app.listen(constants.port, () => {
 
 	console.log(`Server started on: http://localhost:${constants.port}`);
 	console.log('\nServer Routes can be accessed from:-');
-	console.log('Login Route (GET) -> http://192.168.43.100:3000/login?studentId=[]&studentPassword=[]');
-	console.log('Contact Route (GET) -> http://192.168.43.100:3000/contact?studentId=[]');
-	console.log('Personal Route (GET) -> http://192.168.43.100:3000/personal?studentId=[]');
-	console.log('Post Password (POST) -> http://192.168.43.100:3000/password?studentId=[]&newStudentPassword=[]');
-	console.log('Download Files (GET) -> http://192.168.43.100:3000/downloads/(exam||fee)?studentId=[]&semester=[]');
-	console.log('Dashboard Route (GET) -> http://192.168.43.100:3000/dashboard?studentId=[]&semester=[]')
+	console.log(`Login Route (GET) -> http://${SERVER_IP}:${constants.port}/login?studentId=[]&studentPassword=[]`);
+	console.log(`Contact Route (GET) -> http://${SERVER_IP}:${constants.port}/contact?studentId=[]`);
+	console.log(`Personal Route (GET) -> http://${SERVER_IP}:${constants.port}/personal?studentId=[]`);
+	console.log(`Post Password (POST) -> http://${SERVER_IP}:${constants.port}/password?studentId=[]&newStudentPassword=[]`);
+	console.log(`Download Files (GET) -> http://${SERVER_IP}:${constants.port}/downloads/(exam||fee)?studentId=[]&semester=[]`);
+	console.log(`Dashboard Route (GET) -> http://${SERVER_IP}:${constants.port}/dashboard?studentId=[]&semester=[`);
 
 });
