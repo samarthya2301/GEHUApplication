@@ -15,4 +15,5 @@
 local.properties
 /backend/node_modules
 /backend/downloadUtils
+/backend/server.js
 /app/src/main/java/com/samarthya/gehuapplication/Server.java
