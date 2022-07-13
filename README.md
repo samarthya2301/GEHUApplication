@@ -88,23 +88,8 @@ dependencies {
 }
 ```
 
-## Usage
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
 ## Contributing
 For ideas, changes and optimization, feel free to drop a mail [here](mailto:samarthya2301@gmail.com?subject=Changes%20Regarding%20Graphic%20Era%20Android).
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/samarthya2301/GEHUApplication/blob/main/LICENSE.md)
