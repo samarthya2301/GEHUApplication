@@ -27,7 +27,7 @@ Graphic Era Android is an android application for Graphic Era Hill University st
 
 ## Installation
 
-Use Git Bash after installing [Git](https://git-scm.com/downloads) to clone the repository to your local machine. Replace **YOURPATH** with the path that you want to keep the project on, in your local machine.
+Use Git Bash ![GitBash]() after installing [Git](https://git-scm.com/downloads) to clone the repository to your local machine. Replace **YOURPATH** with the path that you want to keep the project on, in your local machine.
 
 ```bash
 cd YOURPATH/
