@@ -34,6 +34,16 @@ cd YOURPATH/GEHUApplication/backend/
 npm install
 ```
 
+## Database Creation
+* Create a database for the application in MySQL, by using XAMPP.
+* Start 'Apache' and 'MySQL' from the XAMPP Control Panel.
+* Click on 'Admin' button corresponding to MySQL tag, or directly go to [phpMyAdmin](http://localhost/phpmyadmin/).
+* Create a new database by clicking on 'New' and name the database as **students_gehu**.
+* Click on the newly created 'students_gehu' database.
+* Now click on the 'Import' section on the top and click on the 'Choose File' button.
+* When selecting the file, select the file **[students_gehu.sql]()** in GEHUApplication folder.
+
+
 ## Important File Creation
 Two files are needed to be created before the project can run.
 
@@ -43,9 +53,9 @@ cd YOURPATH/GEHUApplication/backend/
 touch server.js
 ```
 
-Add the following code snippet to 'server.js' file:-
+Add the following code snippet to 'server.js' file. Replace **IP_ADDRESS** with your local machine's ip address:-
 ```javascript
-const SERVER_IP = "YOUR_IP_ADDRESS"
+const SERVER_IP = "IP_ADDRESS"
 module.exports = SERVER_IP
 ```
 
@@ -55,7 +65,7 @@ cd D:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/java/c
 touch Server.java
 ```
 
-Add the following code snippet to the 'Server.java' file. Make sure to use the same IP_ADDRESS as in 'server.js' and same PORT_NUMBER as in 'constants.js' in the 'backend' folder:-
+Add the following code snippet to the 'Server.java' file. Replace **IP_ADDRESS** with your local machine's ip address. Make sure to use the same **IP_ADDRESS** as in 'server.js' and same **PORT_NUMBER** as in 'constants.js' in the 'backend' folder. Here, 3000 is the port number that is being used. If you want to change, make sure you change it in 'backend/server.js' as well:-
 
 ```java
 package com.samarthya.gehuapplication;
@@ -92,4 +102,4 @@ dependencies {
 For ideas, changes and optimization, feel free to drop a mail [here](mailto:samarthya2301@gmail.com?subject=Changes%20Regarding%20Graphic%20Era%20Android).
 
 ## License
-[MIT](https://github.com/samarthya2301/GEHUApplication/blob/main/LICENSE.md)
+[MIT License](https://github.com/samarthya2301/GEHUApplication/blob/main/LICENSE.md)
