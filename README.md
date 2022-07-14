@@ -49,7 +49,7 @@ npm install
 
 ## Database Creation
 
-* Create a database for the application in MySQL, by using XAMPP.
+Before running the application, a database is needed. Create a database for the application in MySQL, by using XAMPP. Follow these steps to create the database:-
 * Start 'Apache' and 'MySQL' from the XAMPP Control Panel.
 * Click on 'Admin' button corresponding to MySQL tag, or directly go to [phpMyAdmin](http://localhost/phpmyadmin/).
 * Create a new database by clicking on 'New' and name the database as **students_gehu**.
