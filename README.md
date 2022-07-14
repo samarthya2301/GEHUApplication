@@ -82,7 +82,7 @@ cd D:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/java/c
 touch Server.java
 ```
 
-Add the following code snippet to the 'Server.java' file. Replace **IP_ADDRESS** with your local machine's ip address. Make sure to use the same **IP_ADDRESS** as in 'server.js' and same **PORT_NUMBER** as in 'constants.js' in the 'backend' folder. Here, 3000 is the port number that is being used. If you want to change, make sure you change it in 'backend/server.js' as well:-
+Add the following code snippet to the 'Server.java' file. Replace **IP_ADDRESS** with your local machine's ip address. Make sure to use the same **IP_ADDRESS** as in 'server.js' and same **PORT_NUMBER** as in 'constants.js' in the 'backend' folder. Here, 3000 is the port number that is being used. If you want to change, make sure you change it in 'backend/constants.js' as well:-
 ```java
 package com.samarthya.gehuapplication;
 
