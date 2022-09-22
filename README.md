@@ -78,7 +78,7 @@ module.exports = SERVER_IP
 
 Server file for android frontend - Create a new file in 'java' folder like this:-
 ```bash
-cd D:/programming_work/AndroidStudioProjects/GEHUApplication/app/src/main/java/com/samarthya/gehuapplication/
+cd YOURPATH/GEHUApplication/app/src/main/java/com/samarthya/gehuapplication/
 touch Server.java
 ```
 
